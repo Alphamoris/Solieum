@@ -67,10 +67,19 @@ export const MobileNavDropdown: React.FC<MobileNavDropdownProps> = ({
                     setIsOpen(false);
                   }}
                 >
-                  <div className="font-medium text-white">{item.label}</div>
-                  {item.description && (
-                    <div className="text-sm text-gray-400">{item.description}</div>
-                  )}
+                  <div className="flex items-center">
+                    {item.icon && (
+                      <span className="mr-2 text-primary-purple-400">
+                        <item.icon size={18} />
+                      </span>
+                    )}
+                    <div>
+                      <div className="font-medium text-white">{item.label}</div>
+                      {item.description && (
+                        <div className="text-sm text-gray-400">{item.description}</div>
+                      )}
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>

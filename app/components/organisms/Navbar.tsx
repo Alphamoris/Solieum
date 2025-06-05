@@ -10,6 +10,11 @@ import { Logo } from '../atoms/Logo';
 import { useRouter } from 'next/navigation';
 import { NavDropdown, DropdownItem } from '../molecules/NavDropdown';
 import { MobileNavDropdown } from '../molecules/MobileNavDropdown';
+import {
+  RiDashboardLine, RiTeamLine, RiBriefcaseLine, RiNewspaperLine,
+  RiRocketLine, RiGroupLine, RiAppsLine, RiMoneyDollarCircleLine,
+  RiShieldCheckLine, RiLineChartLine,RiRoadMapLine, RiQuestionLine, RiPresentationLine, RiBuildingLine
+} from 'react-icons/ri';
 
 interface NavItem {
   label: string;
@@ -33,40 +38,40 @@ export const Navbar: React.FC<NavbarProps> = ({
       label: 'Technology', 
       href: '/technology',
       dropdownItems: [
-        { label: 'Overview', href: '/technology', description: 'Learn about our Layer 2 technology' },
-        { label: 'Architecture', href: '/technology/architecture', description: 'Technical architecture of Solieum' },
-        { label: 'Performance', href: '/technology/performance', description: 'Benchmarks and performance metrics' },
-        { label: 'Security', href: '/technology/security', description: 'Our security model and audits' }
+        { label: 'Overview', href: '/technology', description: 'Learn about our Layer 2 technology', icon: RiDashboardLine },
+        { label: 'Architecture', href: '/technology/architecture', description: 'Technical architecture of Solieum', icon: RiBuildingLine },
+        { label: 'Performance', href: '/technology/performance', description: 'Benchmarks and performance metrics', icon: RiLineChartLine },
+        { label: 'Security', href: '/technology/security', description: 'Our security model and audits', icon: RiShieldCheckLine }
       ] 
     },
     { 
       label: 'Ecosystem', 
       href: '/ecosystem',
       dropdownItems: [
-        { label: 'Overview', href: '/ecosystem', description: 'Explore the Solieum ecosystem' },
-        { label: 'Partners', href: '/ecosystem/partners', description: 'Strategic and integration partners' },
-        { label: 'Projects', href: '/ecosystem/projects', description: 'Projects building on Solieum' },
-        { label: 'Grants', href: '/ecosystem/grants', description: 'Funding opportunities for developers' }
+        { label: 'Overview', href: '/ecosystem', description: 'Explore the Solieum ecosystem', icon: RiAppsLine },
+        { label: 'Partners', href: '/ecosystem/partners', description: 'Strategic and integration partners', icon: RiGroupLine },
+        { label: 'Projects', href: '/ecosystem/projects', description: 'Projects building on Solieum', icon: RiRocketLine },
+        { label: 'Grants', href: '/ecosystem/grants', description: 'Funding opportunities for developers', icon: RiMoneyDollarCircleLine }
       ] 
     },
     { 
       label: 'About', 
       href: '/about',
       dropdownItems: [
-        { label: 'Mission', href: '/about', description: 'Our vision and mission' },
-        { label: 'Team', href: '/about/team', description: 'Meet the Solieum team' },
-        { label: 'Careers', href: '/about/careers', description: 'Join our team' },
-        { label: 'Blog', href: '/blog', description: 'Latest news and articles' }
+        { label: 'Mission', href: '/about', description: 'Our vision and mission', icon: RiPresentationLine },
+        { label: 'Team', href: '/about/team', description: 'Meet the Solieum team', icon: RiTeamLine },
+        { label: 'Careers', href: '/about/careers', description: 'Join our team', icon: RiBriefcaseLine },
+        { label: 'Blog', href: '/blog', description: 'Latest news and articles', icon: RiNewspaperLine }
       ] 
     },
     { 
       label: 'Investors', 
       href: '/investors',
       dropdownItems: [
-        { label: 'Overview', href: '/investors', description: 'Investment opportunities' },
-        { label: 'Tokenomics', href: '/investors/tokenomics', description: 'Token distribution and economics' },
-        { label: 'Roadmap', href: '/investors/roadmap', description: 'Project development roadmap' },
-        { label: 'FAQs', href: '/investors/faqs', description: 'Frequently asked questions' }
+        { label: 'Overview', href: '/investors', description: 'Investment opportunities', icon: RiMoneyDollarCircleLine },
+        { label: 'Tokenomics', href: '/investors/tokenomics', description: 'Token distribution and economics', icon: RiLineChartLine },
+        { label: 'Roadmap', href: '/investors/roadmap', description: 'Project development roadmap', icon: RiRoadMapLine },
+        { label: 'FAQs', href: '/investors/faqs', description: 'Frequently asked questions', icon: RiQuestionLine }
       ] 
     },
   ],
@@ -101,6 +106,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   // Handle smooth scrolling for anchor links
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Close mobile menu when a link is clicked
+    setIsMobileMenuOpen(false);
+    
     // Only handle internal links
     if (href.startsWith('/')) {
       const currentPath = window.location.pathname;

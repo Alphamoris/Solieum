@@ -53,6 +53,8 @@ export default function RootLayout({
         <title>Solieum - Decentralized Finance Ecosystem</title>
         <meta name="description" content="A unified DeFi ecosystem bridging traditional finance and decentralized innovation" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/images/sul4.jpg" type="image/jpg" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/images/sul4.jpg" />
         {/* Performance optimization script */}
         <script 
           dangerouslySetInnerHTML={{

@@ -4,9 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Footer } from '../organisms/Footer';
 import { Navbar } from '../organisms/Navbar';
 import { cn } from '@/app/styles/utils';
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { motion, useTransform, useSpring, useMotionValue } from 'framer-motion';
-/* eslint-enable @typescript-eslint/no-unused-vars */
 import { usePathname } from 'next/navigation';
 import { ScrollToTopButton } from '../atoms/ScrollToTopButton';
 import { NavigationProgress } from '../atoms/NavigationProgress';

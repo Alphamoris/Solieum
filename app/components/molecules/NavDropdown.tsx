@@ -2,11 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/app/styles/utils';
+import { IconType } from 'react-icons';
 
 export interface DropdownItem {
   label: string;
   href: string;
   description?: string;
+  icon?: IconType;
 }
 
 interface NavDropdownProps {
@@ -93,10 +95,19 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({
                     setIsOpen(false);
                   }}
                 >
-                  <div className="font-medium text-white">{item.label}</div>
-                  {item.description && (
-                    <div className="text-sm text-gray-400">{item.description}</div>
-                  )}
+                  <div className="flex items-center">
+                    {item.icon && (
+                      <span className="mr-2 text-primary-purple-400">
+                        <item.icon size={18} />
+                      </span>
+                    )}
+                    <div>
+                      <div className="font-medium text-white">{item.label}</div>
+                      {item.description && (
+                        <div className="text-sm text-gray-400">{item.description}</div>
+                      )}
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>

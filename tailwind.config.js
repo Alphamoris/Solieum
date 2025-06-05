@@ -20,7 +20,7 @@ export default {
     'bg-primary-green-400', 'bg-primary-green-500', 'bg-primary-green-600', 'bg-primary-green-700',
     'bg-primary-green-800', 'bg-primary-green-900',
     // Text colors
-    'text-primary-purple-300', 'text-primary-blue-300', 'text-primary-green-300',
+    'text-primary-purple-300', 'text-primary-purple-400', 'text-primary-blue-300', 'text-primary-green-300',
     // Opacity variants
     'bg-primary-purple-500/5', 'bg-primary-purple-500/10', 'bg-primary-purple-500/15',
     'bg-primary-purple-500/20', 'bg-primary-purple-500/30', 'bg-primary-purple-500/40',
