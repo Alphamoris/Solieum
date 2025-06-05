@@ -8,6 +8,7 @@ import { Typography } from '../atoms/Typography';
 import { Logo } from '../atoms/Logo';
 import { motion, useInView } from 'framer-motion';
 
+
 interface FooterLink {
   label: string;
   href: string;
